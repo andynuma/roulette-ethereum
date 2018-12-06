@@ -1,0 +1,31 @@
+{
+  "name": "roulette-ethereum",
+  "version": "1.0.0",
+  "description": "Roulette on Ethereum",
+  "main": "truffle-config.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "dev": "npm run artifacts && next client",
+    "artifacts": "cp -r ./build/contracts/ ./client/web3/artifacts",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/andynuma/roulette-ethereum.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/andynuma/roulette-ethereum/issues"
+  },
+  "homepage": "https://github.com/andynuma/roulette-ethereum#readme",
+  "dependencies": {
+    "next": "^7.0.2",
+    "react": "^16.6.3",
+    "react-dom": "^16.6.3",
+    "truffle-contract": "^3.0.6",
+    "web3": "^1.0.0-beta.36"
+  }
+}

@@ -18,7 +18,7 @@ contract Roulette is Owned{
     }
 
     // candidates
-    bytes[] public userNames;
+    string[] public userNames;
 
     // roulette winner
     uint public winner;
@@ -29,21 +29,25 @@ contract Roulette is Owned{
 
     // set candidate
     //TODO:あとでonlyOwnerとonlyOnceを付け足すこと
-    function setUserName(bytes[] _userNames) public onlyOwner onlyOnce{
-        userNames = _userNames;
+    function setUserName(string _userNames) public onlyOwner {
+        userNames.push(_userNames);
     }
 
     // NOTE : this function uses blockhash and it is NOT secure !
-    function generateRandomNumber() public returns(uint){
+    function generateRandomNumber() public{
+        //TODO:テストのためにrequireをコメントアウトしているので注意
+        // require(makeRandomNumberTimes[msg.sender] == 0,"you already make random number");
         makeRandomNumberTimes[msg.sender]++;
+
         uint userNumber = userNames.length;
         bytes32 blockhash = block.blockhash(block.number - 1);
-        uint winner = uint32(blockhash) % userNumber;
-        return winner;
+        uint mywinner = uint32(blockhash) % (userNumber+1);
+        //TODO:配列のあたいの値の入ってない部分がwinnerになるとエラーになる
+        winner = mywinner ;
     }
 
     // return wineer name
-    function viewResult() public view returns(bytes){
+    function viewResult() public view returns(string){
         return userNames[winner];
     }
 
