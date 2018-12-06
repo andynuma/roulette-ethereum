@@ -35,8 +35,8 @@ contract Roulette is Owned{
 
     // NOTE : this function uses blockhash and it is NOT secure !
     function generateRandomNumber() public{
-        //TODO:テストのためにrequireをコメントアウトしているので注意
-        // require(makeRandomNumberTimes[msg.sender] == 0,"you already make random number");
+        //TODO:テストのためにrequireをコメントアウト
+        require(makeRandomNumberTimes[msg.sender] == 0,"you already make random number");
         makeRandomNumberTimes[msg.sender]++;
 
         uint userNumber = userNames.length;
@@ -49,6 +49,10 @@ contract Roulette is Owned{
     // return wineer name
     function viewResult() public view returns(string){
         return userNames[winner];
+    }
+
+    function viewUsers() public view returns(uint){
+        return userNames.length;
     }
 
 }

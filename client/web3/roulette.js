@@ -71,3 +71,10 @@ export const viewResult = async() => {
     const result = await storage.viewResult({from:addresses[0]})
     return result
 }
+
+export const viewUsers = async() => {
+    const storage = await getInstance(Roulette)
+    const addresses = await eth.getAccounts()
+    const result = await storage.viewUsers({from:addresses[0]})
+    return result
+}

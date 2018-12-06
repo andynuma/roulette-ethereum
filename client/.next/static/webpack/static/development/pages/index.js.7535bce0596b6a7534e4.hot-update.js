@@ -147,7 +147,8 @@ function (_React$Component) {
 
             case 10:
               winner = _context3.sent;
-              console.log(winner);
+              console.log("random number : ", winner); // const array = await storage.userNames.call()
+              // console.log(array)
 
             case 12:
             case "end":
@@ -157,29 +158,59 @@ function (_React$Component) {
       }, _callee3, this);
     })));
 
-    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "result",
+    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "users",
     /*#__PURE__*/
     _asyncToGenerator(
     /*#__PURE__*/
     _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee4() {
-      var winner_result;
+      var users, result;
       return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee4$(_context4) {
         while (1) {
           switch (_context4.prev = _context4.next) {
             case 0:
               _context4.next = 2;
-              return Object(_web3_roulette__WEBPACK_IMPORTED_MODULE_4__["viewResult"])();
+              return Object(_web3_roulette__WEBPACK_IMPORTED_MODULE_4__["viewUsers"])();
 
             case 2:
-              winner_result = _context4.sent;
-              console.log(winner_result);
+              users = _context4.sent;
+              _context4.next = 5;
+              return users.toNumber();
 
-            case 4:
+            case 5:
+              result = _context4.sent;
+              console.log(result);
+
+            case 7:
             case "end":
               return _context4.stop();
           }
         }
       }, _callee4, this);
+    })));
+
+    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "result",
+    /*#__PURE__*/
+    _asyncToGenerator(
+    /*#__PURE__*/
+    _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee5() {
+      var winner_result;
+      return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee5$(_context5) {
+        while (1) {
+          switch (_context5.prev = _context5.next) {
+            case 0:
+              _context5.next = 2;
+              return Object(_web3_roulette__WEBPACK_IMPORTED_MODULE_4__["viewResult"])();
+
+            case 2:
+              winner_result = _context5.sent;
+              console.log("winner name : ", winner_result);
+
+            case 4:
+            case "end":
+              return _context5.stop();
+          }
+        }
+      }, _callee5, this);
     })));
 
     return _this;
@@ -190,27 +221,29 @@ function (_React$Component) {
     value: function () {
       var _componentDidMount = _asyncToGenerator(
       /*#__PURE__*/
-      _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee5() {
+      _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee6() {
         var addresses;
-        return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee5$(_context5) {
+        return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee6$(_context6) {
           while (1) {
-            switch (_context5.prev = _context5.next) {
+            switch (_context6.prev = _context6.next) {
               case 0:
-                _context5.next = 2;
+                _context6.next = 2;
                 return _web3_provider__WEBPACK_IMPORTED_MODULE_2__["eth"].getAccounts();
 
               case 2:
-                addresses = _context5.sent;
-                console.log(addresses); // console.log("aaa")
+                addresses = _context6.sent;
+                console.log("Your address : ", addresses); // const array = await storage.userNames.call()
+                // console.log(array)
+                // console.log("aaa")
                 // const storage = await getInstance(Roulette)
                 // console.log("storage:", storage)
 
               case 4:
               case "end":
-                return _context5.stop();
+                return _context6.stop();
             }
           }
-        }, _callee5, this);
+        }, _callee6, this);
       }));
 
       function componentDidMount() {
@@ -225,44 +258,105 @@ function (_React$Component) {
       return react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 43
+          lineNumber: 54
+        },
+        __self: this
+      }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("h1", {
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 56
+        },
+        __self: this
+      }, "Roulette on Ethereum"), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("h3", {
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 57
+        },
+        __self: this
+      }, "Please push buttons from the top"), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("ul", {
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 58
+        },
+        __self: this
+      }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("li", {
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 59
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("button", {
         onClick: this.owner,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 44
+          lineNumber: 60
         },
         __self: this
-      }, "Get Owner address"), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("button", {
+      }, "Get Owner address")), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("li", {
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 64
+        },
+        __self: this
+      }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("button", {
         onClick: this.deploy,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 48
+          lineNumber: 65
         },
         __self: this
-      }, "Get deploy time"), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_web3_roulette__WEBPACK_IMPORTED_MODULE_4__["SetUserInfo"], {
+      }, "Get deploy time")), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("li", {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 52
+          lineNumber: 69
         },
         __self: this
-      }), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("button", {
+      }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_web3_roulette__WEBPACK_IMPORTED_MODULE_4__["SetUserInfo"], {
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 70
+        },
+        __self: this
+      })), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("li", {
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 72
+        },
+        __self: this
+      }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("button", {
+        onClick: this.users,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 73
+        },
+        __self: this
+      }, "Get Users Number")), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("li", {
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 78
+        },
+        __self: this
+      }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("button", {
         onClick: this.random,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 54
+          lineNumber: 79
         },
         __self: this
-      }, "set random number"), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("button", {
+      }, "Make random number")), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("li", {
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 83
+        },
+        __self: this
+      }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("button", {
         onClick: this.result,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 58
+          lineNumber: 84
         },
         __self: this
-      }, "Get result"));
+      }, "Show result"))));
     }
   }]);
 
@@ -293,4 +387,4 @@ function (_React$Component) {
 /***/ })
 
 })
-//# sourceMappingURL=index.js.9a49489165b88f2a20f4.hot-update.js.map
+//# sourceMappingURL=index.js.7535bce0596b6a7534e4.hot-update.js.map
