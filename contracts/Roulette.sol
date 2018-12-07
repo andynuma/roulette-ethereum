@@ -28,8 +28,8 @@ contract Roulette is Owned{
     mapping(address => uint ) public makeRandomNumberTimes;
 
     // set candidate
-    //TODO:あとでonlyOwnerとonlyOnceを付け足すこと
-    function setUserName(string _userNames) public onlyOwner {
+    //TODO:onlyOwnerを消すこと
+    function setUserName(string _userNames) public {
         userNames.push(_userNames);
     }
 
