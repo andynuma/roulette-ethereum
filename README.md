@@ -2,7 +2,7 @@
 Roulette on Ethereum https://roulethereum.herokuapp.com/
 
 ## Random Number Generation
-This contract uses the blockhash for create a random number, and it is NOT secure.
+This contract uses the blockhash for creating a random number, and it is NOT secure.
 ```solidity
 uint public winner;
 
