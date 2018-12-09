@@ -54,5 +54,4 @@ contract Roulette is Owned{
     function viewUsers() public view returns(uint){
         return userNames.length;
     }
-
 }
