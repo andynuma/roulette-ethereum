@@ -14,16 +14,12 @@ export default class IndexPage extends React.Component{
         console.log(deployInfo)
     }
 
-    //TODO:乱数がうまく生成できていない
     random = async() => {
         await generateRandom()
-        // console.log(random)
         const storage = await getInstance(Roulette)
         const temp = await storage.winner.call()
         const winner = await temp.toNumber()
         console.log("random number : ",winner)
-        // const array = await storage.userNames.call()
-        // console.log(array)
     }
 
     users = async() => {
@@ -38,16 +34,8 @@ export default class IndexPage extends React.Component{
     }
 
     async componentDidMount() {
-        // console.log(Roulette)
-        // const storage = await getInstance(Roulette)
         const addresses = await eth.getAccounts()
         console.log("Your address : ",addresses)
-        // const array = await storage.userNames.call()
-        // console.log(array)
-        // console.log("aaa")
-        // const storage = await getInstance(Roulette)
-        // console.log("storage:", storage)
-
     }
     render() {
          return (

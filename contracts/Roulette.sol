@@ -1,4 +1,4 @@
-pragma solidity ^0.4.19;
+pragma solidity >0.4.99 <0.6.0;
 pragma experimental ABIEncoderV2;
 import "./Owned.sol";
 
@@ -7,7 +7,7 @@ contract Roulette is Owned{
     // owner can deploy contract at once;
     uint public deployTime = 0;
 
-    constructor(){
+    constructor() public{
         ownerAddr = msg.sender;
         deployTime += 1;
     }
@@ -29,7 +29,7 @@ contract Roulette is Owned{
 
     // set candidate
     //TODO:onlyOwnerを消すこと
-    function setUserName(string _userNames) public {
+    function setUserName(string memory _userNames) public {
         userNames.push(_userNames);
     }
 
@@ -40,14 +40,14 @@ contract Roulette is Owned{
         makeRandomNumberTimes[msg.sender]++;
 
         uint userNumber = userNames.length;
-        bytes32 blockhash = block.blockhash(block.number - 1);
-        uint mywinner = uint32(blockhash) % (userNumber+1);
+        bytes32 blockhash = blockhash(block.number - 1);
+        uint mywinner = uint(blockhash) % (userNumber+1);
         //TODO:配列のあたいの値の入ってない部分がwinnerになるとエラーになる
         winner = mywinner ;
     }
 
     // return wineer name
-    function viewResult() public view returns(string){
+    function viewResult() public view returns(string memory){
         return userNames[winner];
     }
 
