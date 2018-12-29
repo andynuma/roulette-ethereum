@@ -1,6 +1,6 @@
 import {eth,getInstance} from "../web3/provider"
 import Roulette from "../web3/artifacts/Roulette"
-import {GetOwnerInfo, getDeployrInfo, SetUserInfo, viewResult, generateRandom, viewUsers, GetDeployrInfo} from "../web3/roulette"
+import {GenerateRandomNumber,GetOwnerInfo, getDeployrInfo, SetUserInfo, viewResult, generateRandom, viewUsers, GetDeployrInfo} from "../web3/roulette"
 import {List} from "../web3/List"
 
 
@@ -21,13 +21,13 @@ export default class IndexPage extends React.Component{
     //     console.log(deployInfo)
     // }
 
-    random = async() => {
-        await generateRandom()
-        const storage = await getInstance(Roulette)
-        const temp = await storage.winner.call()
-        const winner = await temp.toNumber()
-        console.log("random number : ",winner)
-    }
+    // random = async() => {
+    //     await generateRandom()
+    //     const storage = await getInstance(Roulette)
+    //     const temp = await storage.winner.call()
+    //     const winner = await temp.toNumber()
+    //     console.log("random number : ",winner)
+    // }
 
     users = async() => {
         const users = await viewUsers()
@@ -63,9 +63,11 @@ export default class IndexPage extends React.Component{
                     <li>
                         <GetOwnerInfo />
                     </li>
+
                     <li>
                        <GetDeployrInfo />
                     </li>
+
                     <li>
                         <SetUserInfo addUser={this.addUser}/>
                     </li>
@@ -73,21 +75,14 @@ export default class IndexPage extends React.Component{
                     <List members={this.state.members} />
 
                     <li>
-                        <button onClick={this.users}>
-                            Get Users Number
-                        </button>
+                        <GenerateRandomNumber />
                     </li>
+                    {/* <li>
 
-                    <li>
-                        <button onClick={this.random}>
-                            Make random number
+                        <button onClick={this.users}>
+                            Show number of user
                         </button>
-                    </li>
-                    <li>
-                        <button onClick={this.result}>
-                            Show result
-                        </button>
-                    </li>
+                    </li> */}
                 </ul>
             </div>
         )

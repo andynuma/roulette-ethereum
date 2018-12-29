@@ -17,7 +17,7 @@ export class List extends React.Component{
 
         return (
             <div>
-                <h2>Member List</h2>
+                <h3>Member List</h3>
                 <ul>{list}</ul>
             </div>
         )

@@ -34,16 +34,16 @@ contract Roulette is Owned{
     }
 
     // NOTE : this function uses blockhash and it is NOT secure !
-    function generateRandomNumber() public{
-        //TODO:テストのためにrequireをコメントアウト
+    function generateRandomNumber() public returns(uint){
+        //TODO:テストのためにrequireをコメントアウトしているので戻す事
         require(makeRandomNumberTimes[msg.sender] == 0,"you already make random number");
         makeRandomNumberTimes[msg.sender]++;
 
         uint userNumber = userNames.length;
         bytes32 blockhash = blockhash(block.number - 1);
-        uint mywinner = uint(blockhash) % (userNumber+1);
+        uint myWinner = uint(blockhash) % (userNumber+1);
         //TODO:配列のあたいの値の入ってない部分がwinnerになるとエラーになる
-        winner = mywinner ;
+        winner = myWinner;
     }
 
     // return wineer name

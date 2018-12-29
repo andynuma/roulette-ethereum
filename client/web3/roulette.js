@@ -25,8 +25,7 @@ export class GetOwnerInfo extends React.Component{
         return(
             <div>
                 <button onClick={this.handleOnClick}>Get Owner Address</button>
-                <br/>
-                Owner Address is : {this.state.address}
+                <h5>Owner Address is : {this.state.address}</h5>
             </div>
         )
     }
@@ -61,8 +60,7 @@ export class GetDeployrInfo extends React.Component{
         return(
             <div>
                 <button onClick={this.handleOnClick}>Get Deploy Time</button>
-                <br/>
-                Deployed Time is : {this.state.time}
+                <h5>Deployed Time is : {this.state.time}</h5>
             </div>
         )
     }
@@ -109,6 +107,7 @@ export class SetUserInfo extends React.Component{
         event.preventDefault();
         await setName(this.state.value)
         this.props.addUser(this.state.value)
+        this.setState({value : ""})
     }
 
     render(){
@@ -116,7 +115,7 @@ export class SetUserInfo extends React.Component{
             <div>
                 <form onSubmit={this.handleSubmit}>
                 <label>
-                    Input user Name:
+                    Please input candicates:
                     <input type="text" value={this.state.value} onChange={this.handleChange}/>
                 </label>
                 <input type="submit" value="Submit"/>
@@ -130,7 +129,41 @@ export class SetUserInfo extends React.Component{
 export const generateRandom = async() => {
     const storage = await getInstance(Roulette)
     const addresses = await eth.getAccounts()
-    await storage.generateRandomNumber({from:addresses[0]})
+    const result = await storage.generateRandomNumber({from:addresses[0]})
+    return result
+}
+
+export class GenerateRandomNumber extends React.Component{
+    constructor(props){
+        super(props);
+        this.state = {number : "", winner : ""};
+        this.handleOnClick = this.handleOnClick.bind(this);
+    }
+
+    handleOnClick = async() => {
+        // console.log(this.state.number)
+        await generateRandom();
+        const storage = await getInstance(Roulette)
+        const result = await storage.winner.call()
+        const winNumber = await result.toNumber()
+        await this.setState({number : winNumber})
+        // console.log(this.state.number)
+
+        const winnerName = await storage.viewResult()
+        await this.setState({winner : winnerName})
+        console.log(winnerName)
+    }
+
+    render(){
+        return(
+            <div>
+                Let's start Roulette : 
+                <button onClick={this.handleOnClick}>Get Random Number</button>
+                <h5>Random Number is {this.state.number}</h5>
+                <h5>So ... Winner is {this.state.winner}</h5>
+            </div>
+        )
+    }
 }
 
 export const viewResult = async() => {
