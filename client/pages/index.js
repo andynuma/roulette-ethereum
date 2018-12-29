@@ -1,18 +1,25 @@
 import {eth,getInstance} from "../web3/provider"
 import Roulette from "../web3/artifacts/Roulette"
-import {getOwnerInfo, getDeployrInfo, SetUserInfo, viewResult, generateRandom, viewUsers} from "../web3/roulette"
+import {GetOwnerInfo, getDeployrInfo, SetUserInfo, viewResult, generateRandom, viewUsers, GetDeployrInfo} from "../web3/roulette"
+import {List} from "../web3/List"
+
 
 export default class IndexPage extends React.Component{
 
-    owner = async () => {
-        const ownerInfo = await getOwnerInfo()
-        console.log(ownerInfo)
+    constructor(props){
+        super(props)
+        this.state = { members : [], nextId : 0}
     }
 
-    deploy = async() => {
-        const deployInfo = await getDeployrInfo()
-        console.log(deployInfo)
-    }
+    // owner = async () => {
+    //     const ownerInfo = await getOwnerInfo()
+    //     console.log(ownerInfo)
+    // }
+
+    // deploy = async() => {
+    //     const deployInfo = await getDeployrInfo()
+    //     console.log(deployInfo)
+    // }
 
     random = async() => {
         await generateRandom()
@@ -37,26 +44,34 @@ export default class IndexPage extends React.Component{
         const addresses = await eth.getAccounts()
         console.log("Your address : ",addresses)
     }
+
+    addUser = async(user) => {
+        const {members, nextId} = await this.state;
+        this.setState({
+            members : [...members,{id : nextId + 1, name : user}],
+            nextId : nextId + 1
+        })
+    }
+
     render() {
          return (
             <div>
-
                 <h1>Roulette on Ethereum</h1>
                 <h3>Please push buttons from the top</h3>
                 <ul>
+
                     <li>
-                        <button onClick={this.owner}>
-                            Get Owner address
-                        </button>
+                        <GetOwnerInfo />
                     </li>
                     <li>
-                        <button onClick={this.deploy}>
-                            Get deploy time
-                        </button>
+                       <GetDeployrInfo />
                     </li>
                     <li>
-                        <SetUserInfo />
+                        <SetUserInfo addUser={this.addUser}/>
                     </li>
+
+                    <List members={this.state.members} />
+
                     <li>
                         <button onClick={this.users}>
                             Get Users Number
