@@ -1,4 +1,4 @@
-![roulette mov](https://user-images.githubusercontent.com/29624403/50573655-9fd5b700-0e1b-11e9-9f7b-b1ca92050db9.gif)
+![roulette_action](https://user-images.githubusercontent.com/29624403/50574000-1d042a80-0e22-11e9-9271-4a7b937b3178.gif)
 
 Roulette on Ethereum https://roulethereum.herokuapp.com/ (this is old version)
 
