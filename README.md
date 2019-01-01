@@ -1,6 +1,6 @@
 
-## Screen shot
-<img width="602" alt="2018-12-29 21 50 20" src="https://user-images.githubusercontent.com/29624403/50538513-3ef87580-0bb4-11e9-913b-37a90eb602bf.png">
+## Overview
+![roulette mov](https://user-images.githubusercontent.com/29624403/50573655-9fd5b700-0e1b-11e9-9f7b-b1ca92050db9.gif)
 
 Roulette on Ethereum https://roulethereum.herokuapp.com/ (this is old version)
 
