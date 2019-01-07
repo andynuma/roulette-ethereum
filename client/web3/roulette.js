@@ -146,7 +146,8 @@ export class GenerateRandomNumber extends React.Component{
         const storage = await getInstance(Roulette)
         const result = await storage.winner.call()
         const winNumber = await result.toNumber()
-        await this.setState({number : winNumber})
+        //0番目から始まっているので調整
+        await this.setState({number : winNumber + 1})
         // console.log(this.state.number)
 
         const winnerName = await storage.viewResult()
@@ -159,8 +160,8 @@ export class GenerateRandomNumber extends React.Component{
             <div>
                 Let's start Roulette : 
                 <button onClick={this.handleOnClick}>Get Random Number</button>
-                <h5>Random Number is {this.state.number}</h5>
-                <h5>So ... Winner is {this.state.winner}</h5>
+                <h5>Random Number : {this.state.number}</h5>
+                <h5>So ... Winner : {this.state.winner}</h5>
             </div>
         )
     }
