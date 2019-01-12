@@ -17,8 +17,11 @@ export class List extends React.Component{
 
         return (
             <div>
-                <h3>Member List</h3>
+                Members
                 <ul>{list}</ul>
+                <style jsx>{`
+
+                `}</style>
             </div>
         )
     }

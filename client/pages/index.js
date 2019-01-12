@@ -56,9 +56,9 @@ export default class IndexPage extends React.Component{
     render() {
          return (
             <div>
-                <h1>Roulette on Ethereum</h1>
+                <h1 className="title">Roulette on Ethereum</h1>
                 <h3>Please push buttons from the top</h3>
-                <ul>
+                <ol type="1">
 
                     <li>
                         <GetOwnerInfo />
@@ -77,13 +77,7 @@ export default class IndexPage extends React.Component{
                     <li>
                         <GenerateRandomNumber />
                     </li>
-                    {/* <li>
-
-                        <button onClick={this.users}>
-                            Show number of user
-                        </button>
-                    </li> */}
-                </ul>
+                </ol>
             </div>
         )
     }

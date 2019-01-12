@@ -26,6 +26,34 @@ export class GetOwnerInfo extends React.Component{
             <div>
                 <button onClick={this.handleOnClick}>Get Owner Address</button>
                 <h5>Owner Address is : {this.state.address}</h5>
+
+                <style jsx>{`
+                    h5 {
+                        font-size:15px;
+                        // padding-buttom:100px;
+                        // float:left;
+                    }
+
+                    button {
+                        font-size:100%;
+                        margin-top:40px;
+                        // float:left;
+                    }
+
+                    button:hover,
+                    button:focus{
+                        background:#0053ba;
+                    }
+
+                    button:focus {
+                        outline: 1px solid #fff;
+                        outline-offset: -4px;
+                    }
+
+                    button:active {
+                        transform: scale(0.99);
+                    }
+                `}</style>
             </div>
         )
     }
@@ -61,6 +89,31 @@ export class GetDeployrInfo extends React.Component{
             <div>
                 <button onClick={this.handleOnClick}>Get Deploy Time</button>
                 <h5>Deployed Time is : {this.state.time}</h5>
+
+                <style jsx>{`
+                    h5 {
+                        font-size:15px;
+                    }
+
+                    button {
+                        font-size:100%;
+                        margin-top:20px;
+                    }
+
+                    button:hover,
+                    button:focus{
+                        background:#0053ba;
+                    }
+
+                    button:focus {
+                        outline: 1px solid #fff;
+                        outline-offset: -4px;
+                    }
+
+                    button:active {
+                        transform: scale(0.99);
+                    }
+                `}</style>
             </div>
         )
     }
@@ -114,13 +167,36 @@ export class SetUserInfo extends React.Component{
         return(
             <div>
                 <form onSubmit={this.handleSubmit}>
-                <label>
-                    Please input candicates:
-                    <input type="text" value={this.state.value} onChange={this.handleChange}/>
-                </label>
-                <input type="submit" value="Submit"/>
+                    <label className="content-title">
+                        Please input candicates:
+                        <input type="text" value={this.state.value} onChange={this.handleChange}/>
+                    </label>
+                    <input className="content-submit" type="submit" value="Submit"/>
                 </form>
                 {/* {this.state.value} */}
+
+                <style jsx>{`
+
+                    form {
+                        margin-top:40px;
+                    }
+
+                    .content-title{
+                        font-size:20px;
+                        font-family:serif;
+
+                    }
+
+                    h5 {
+                        font-size:15px;
+                    }
+
+                    .content-submit:hover,content:focus{
+                        background:#0053ba;
+                    }
+
+
+                `}</style>
             </div>
         )
     }
@@ -158,10 +234,40 @@ export class GenerateRandomNumber extends React.Component{
     render(){
         return(
             <div>
-                Let's start Roulette : 
-                <button onClick={this.handleOnClick}>Get Random Number</button>
+                <h2>Let's start Roulette ! </h2>
+                <button onClick={this.handleOnClick}>Start</button>
                 <h5>Random Number : {this.state.number}</h5>
-                <h5>So ... Winner : {this.state.winner}</h5>
+                <h5>So ... Winner is :{this.state.winner}</h5>
+
+                <style jsx>{`
+
+                    h2 {
+                        font-size:18px;
+                        margin-top:30px;
+                    }
+
+                    h5 {
+                        font-size:15px;
+                    }
+
+                    button {
+                        font-size:100%;
+                    }
+
+                    button:hover,
+                    button:focus{
+                        background:#0053ba;
+                    }
+
+                    button:focus {
+                        outline: 1px solid #fff;
+                        outline-offset: -4px;
+                    }
+
+                    button:active {
+                        transform: scale(0.99);
+                    }
+                `}</style>
             </div>
         )
     }
