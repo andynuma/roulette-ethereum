@@ -1,5 +1,6 @@
 var HDWalletProvider = require("truffle-hdwallet-provider");
 var mnemonic = "dismiss absurd endless awesome issue aware calm exercise title crowd fossil evoke";
+// it's mnemonic has only testnet ETH, and has no real money.
 
 module.exports = {
     networks: {

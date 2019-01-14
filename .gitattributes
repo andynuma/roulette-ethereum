@@ -3,3 +3,9 @@
 node_modules
 *.DS_Store
 client/.next/
+
+*.otf binary
+*.eot binary
+*.svg binary
+*.ttf binary
+*.woff binary
