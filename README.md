@@ -1,7 +1,7 @@
 ![roulette_action](https://user-images.githubusercontent.com/29624403/50574000-1d042a80-0e22-11e9-9271-4a7b937b3178.gif)
 
 Deployed at ropsten network.  
-contract address:[0x106136eE5e6C8e975FF301481d49469C7D3681a1](https://ropsten.etherscan.io/address/0x106136eE5e6C8e975FF301481d49469C7D3681a1)
+contract address:[0x54dDEFcd7EC70405701F596856e6E5A64d5d7883](https://ropsten.etherscan.io/address/0x106136eE5e6C8e975FF301481d49469C7D3681a1)
 
 ## Random Number Generation is NOT secure !
 This contract uses the blockhash for creating a random number, and it is NOT secure.
