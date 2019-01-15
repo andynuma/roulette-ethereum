@@ -3,6 +3,35 @@
 Deployed at ropsten network.  
 contract address:[0x54dDEFcd7EC70405701F596856e6E5A64d5d7883](https://ropsten.etherscan.io/address/0x54dDEFcd7EC70405701F596856e6E5A64d5d7883)
 
+## Installtion
+1. Install packages
+- `npm init`
+- `npm install --save next react react-dom `
+
+2. add some code at package.json  
+```js
+// package.json
+ {
+   // ...
+   "scripts": {
+     "dev": "npm run artifacts && next client",
+     "artifacts": "cp -r ./build/contracts/ ./client/web3/artifacts",
+     "test": "echo \"Error: no test specified\" && exit 1"
+   },
+   
+   // ...
+ }
+```
+
+3. compile and migrate  
+- Launch [Ganache](https://truffleframework.com/ganache)
+- `truffle compile`
+- `truffle migrate`
+
+4. run  
+`npm run dev`
+
+
 ## Random Number Generation is NOT secure !
 This contract uses the blockhash for creating a random number, and it is NOT secure.
 ```solidity
