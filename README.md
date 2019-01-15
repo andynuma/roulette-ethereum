@@ -4,11 +4,11 @@ Deployed at ropsten network.
 contract address:[0x54dDEFcd7EC70405701F596856e6E5A64d5d7883](https://ropsten.etherscan.io/address/0x54dDEFcd7EC70405701F596856e6E5A64d5d7883)
 
 ## Installtion
-1. Install packages
-- `npm init`
-- `npm install --save next react react-dom `
+### Install packages
+ - `npm init`
+ - `npm install --save next react react-dom truffle-contract`
 
-2. add some code at package.json  
+### add some code at package.json  
 ```js
 // package.json
  {
@@ -23,13 +23,13 @@ contract address:[0x54dDEFcd7EC70405701F596856e6E5A64d5d7883](https://ropsten.et
  }
 ```
 
-3. compile and migrate  
-- Launch [Ganache](https://truffleframework.com/ganache)
-- `truffle compile`
-- `truffle migrate`
+### compile and migrate  
+ - Launch [Ganache](https://truffleframework.com/ganache)
+ - `truffle compile`
+ - `truffle migrate`
 
-4. run  
-`npm run dev`
+### Run  
+ - `npm run dev`
 
 
 ## Random Number Generation is NOT secure !
