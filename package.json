@@ -11,7 +11,8 @@
     "artifacts": "cp -r ./build/contracts/ ./client/pages/web3/artifacts",
     "test": "echo \"Error: no test specified\" && exit 1",
     "prestart": "npm run artifacts && next build client",
-    "start": "next start client -p $PORT"
+    "start": "next start client",
+    "build": "next start"
   },
   "repository": {
     "type": "git",
@@ -24,6 +25,8 @@
   },
   "homepage": "https://github.com/andynuma/roulette-ethereum#readme",
   "dependencies": {
+    "@zeit/next-css": "^1.0.1",
+    "antd": "^3.12.3",
     "bindings": "^1.3.1",
     "next": "^7.0.2",
     "react": "^16.6.3",

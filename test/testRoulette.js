@@ -55,14 +55,11 @@ contract("Roulette",(accounts) => {
         assert.ok(err instanceof Error)
     })
 
-    // it("winner number check",async() => {
-    //     const tx = await contractInstance.winner.call();
-    //     // console.log("result:",tx)
-    //     const result = await tx.toNumber();
-    //     // console.log(result)
-    //     assert.isOk(tx);
-    // })
-
-    //TODO:デプロイ回数が一回かどうかの判定のテスト
-
+    it.skip("winner number check",async() => {
+        const tx = await contractInstance.winner.call();
+        // console.log("result:",tx)
+        const result = await tx.toNumber();
+        // console.log(result)
+        assert.isOk(tx);
+    })
 })
