@@ -9,4 +9,5 @@ client/.next/
 *.svg binary
 *.ttf binary
 *.woff binary
-*.npmignore binary
+
+text eol=lf
