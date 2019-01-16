@@ -3285,8 +3285,8 @@
     "3": {
       "events": {},
       "links": {},
-      "address": "0xd6e9c8B5C249016F39B8DB6fFeA38B58585181D6",
-      "transactionHash": "0x32bb272234c072d27c74c351620645365c4cc89dfb4a73726ec5654993ad79f3"
+      "address": "0x54dDEFcd7EC70405701F596856e6E5A64d5d7883",
+      "transactionHash": "0x15db64320d34f968cd1eb4899e24c6000f53987a6c837c0bc0209c29c23ee4a0"
     },
     "5777": {
       "events": {},
@@ -3296,7 +3296,7 @@
     }
   },
   "schemaVersion": "3.0.0",
-  "updatedAt": "2019-01-15T08:02:58.652Z",
+  "updatedAt": "2019-01-15T12:47:22.557Z",
   "devdoc": {
     "methods": {}
   },
